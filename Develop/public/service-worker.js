@@ -10,7 +10,7 @@ const FILES_TO_CACHE = [
     "/styles.css"
   ];
   
-  const CACHE_NAME = "static-cache-v2";
+  const CACHE_NAME = "BudgetTracker";
   const DATA_CACHE_NAME = "data-cache-v1";
   
   // install
@@ -18,6 +18,7 @@ const FILES_TO_CACHE = [
     evt.waitUntil(
       caches.open(CACHE_NAME).then(cache => {
         console.log("Your files were pre-cached successfully!");
+        console.log(CACHE_NAME);
         return cache.addAll(FILES_TO_CACHE);
       })
     );
@@ -65,7 +66,7 @@ const FILES_TO_CACHE = [
       );
   
       return;
-    }
+    };
   
     // if the request is not for the API, serve static assets using "offline-first" approach.
     // see https://developers.google.com/web/fundamentals/instant-and-offline/offline-cookbook#cache-falling-back-to-network
